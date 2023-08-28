@@ -66,7 +66,7 @@ function Contents({ nome }) {
             value={tarefa}
             onChange={handleTarefaChange}
           />
-          <button className='btn btn-primary mt-4'>Adicionar</button>
+          <button className='btn btn-secondary mt-4'>Adicionar</button>
         </div>
       </form>
     </div>

@@ -5,8 +5,8 @@
       "nome_tarefa": "Estudar HTML"
     },
     {
-      "id": 2,
-      "nome_tarefa": "Estudar CSS"
+      "nome_tarefa": "Estudar CSS",
+      "id": 2
     },
     {
       "id": 3,
@@ -17,7 +17,7 @@
       "nome_tarefa": "Estudar React"
     },
     {
-      "nome_tarefa": "Nova Tarefa",
+      "nome_tarefa": "Estudar Express Editada",
       "id": 7
     }
   ]

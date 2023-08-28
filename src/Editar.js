@@ -4,11 +4,12 @@ import { useNavigate, useParams } from 'react-router-dom'
 
 function Editar() {
   const { id } = useParams()
-  const navigate = useNavigate() // Inicializa o useNavegate
+  const navigate = useNavigate() // Inicializa o useNavigate
   const [tarefaEditada, setTarefaEditada] = useState('')
+
   useEffect(() => {
     axios.get(`http://localhost:3001/tarefas/${id}`).then((response) => {
-      setTarefaEditada(response.data.nome)
+      setTarefaEditada(response.data.nome_tarefa)
     })
   }, [id])
 
@@ -24,10 +25,12 @@ function Editar() {
       id: id,
     }
 
-    axios.put(id, tarefaObject).then((response) => {
-      setTarefaEditada('')
-      navigate('/')
-    })
+    axios
+      .put(`http://localhost:3001/tarefas/${id}`, tarefaObject)
+      .then((response) => {
+        setTarefaEditada('')
+        navigate('/')
+      })
   }
 
   return (
@@ -44,7 +47,7 @@ function Editar() {
             value={tarefaEditada}
             onChange={handleTarefaChange}
           />
-          <button className='btn btn-primary mt-4'>Editar</button>
+          <button className='btn btn-secondary mt-4'>Editar</button>
         </div>
       </form>
     </div>
